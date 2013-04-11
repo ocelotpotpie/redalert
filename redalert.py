@@ -21,18 +21,33 @@ while 1:
     # Determine whether the server is up or down
     try:      
         time = strftime("%H:%M:%S")
+        # Connect to server
     	s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        # actually connect to server
         s.connect((mcip, port))
+        # Send the magic code
         s.send(magic)
+        # Open our present
         data = s.recv(1024)
+        # Bye!
         s.close()
-        print str(time) + " > " + data
         # server is running fine! print MOTD 
+        print str(time) + " > " + data
+        # caching
+        down = False
     except Exception, e:
         # assume server is down
+        time = strftime("%H:%M:%S")
+        # Log
         print str(time) + " > " + str(e)
-        if DM_ME = True:
-            t.direct_messages.new(user=DM_USER,text="Oh no, the server is down!")
-        if TWEET_DOWNTIME = True:
-            t.statuses.update(status="[AutoTweet] The server is down as of " + time + ". :(")
+        # If the server is down
+        if down = True:
+            if DM_ME = True:
+                # Send DM
+                t.direct_messages.new(user=DM_USER,text="Oh no, the server is down!")
+            if TWEET_DOWNTIME = True:
+                # Send tweet
+                t.statuses.update(status="[AutoTweet] The server is down as of " + time + ". :(")
+        # caching
+        down = True
     sleep(interval)

@@ -30,4 +30,5 @@ while 1:
         # server is running fine! print MOTD 
     except Exception, e:
         # assume server is down
+        pass
     sleep(60)

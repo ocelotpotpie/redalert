@@ -4,7 +4,6 @@ import struct
 import os
 from time import strftime
 from time import sleep
-import inspect
 
 ##########################################
 # be sure to `pip install Twitter` first #

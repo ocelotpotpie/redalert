@@ -50,6 +50,8 @@ while 1:
     # Determine whether the server is up or down
     ping(host=mcip, port=port)
     if up = true:
+        pass
+    else:
         # Alert !
         t.statuses.update(status="Server is down as of " + time)
     time.sleep(60)

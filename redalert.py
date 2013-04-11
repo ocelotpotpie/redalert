@@ -4,18 +4,13 @@ import struct
 import os
 from time import strftime
 from time import sleep
+from config import *
 
 ##########################################
 # be sure to `pip install Twitter` first #
 ##########################################
 
-# Add your stuff hurr
-OAUTH_TOKEN = ""
-OAUTH_SECRET = ""
-CONSUMER_KEY = ""
-CONSUMER_SECRET = ""
-mcip = "mau5ville.com"
-port = 25565
+# Add your stuff in config.py
 
 # Setup
 magic = "\xFE"

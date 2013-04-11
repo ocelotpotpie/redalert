@@ -36,12 +36,12 @@ while 1:
         # caching
         down = False
     except Exception, e:
+        down = True
         # assume server is down
         time = strftime("%H:%M:%S")
         # Log
         print str(time) + " > " + str(e)
         # If the server is down
-        # Note: Will skip over once. just incase of some small error.
         if down:
             if DM_ME:
                 # Send DM

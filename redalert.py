@@ -26,9 +26,9 @@ while 1:
         s.send(magic)
         data = s.recv(1024)
         s.close()
-        print time + " > " + u'data'
+        print str(time) + " > " + u'data'
         # server is running fine! print MOTD 
     except Exception, e:
         # assume server is down
-        print time + " > " + e
+        print str(time) + " > " + str(e)
     sleep(60)

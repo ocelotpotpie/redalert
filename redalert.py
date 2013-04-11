@@ -30,7 +30,7 @@ while 1:
         s.send(magic)
         data = s.recv(1024)
         print data
+    	s.close()
     except Exception, e:
         print e
-    s.close()
     sleep(60)

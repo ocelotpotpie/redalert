@@ -4,6 +4,7 @@ import struct
 import os
 from time import strftime
 from time import sleep
+from config import *
 
 ##########################################
 # be sure to `pip install Twitter` first #
@@ -26,8 +27,6 @@ if not os.path.exists('config.py'):
         mcip = "yourserver.com"
         port = 25565
         ''') + '\n')
-
-execfile('config.py')
 
 magic = "\xFE"
 time = strftime("%H:%M:%S")

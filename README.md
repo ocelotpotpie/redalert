@@ -1,6 +1,13 @@
 #redalert
 Tweet if your minecraft server is down, optionally DM you.
 
+## Quick setup
+	cd /dir/for/this/
+	git init 
+	git remote add origin https://github.com/savi3000/redalert.git 
+	git pull origin master 
+	nano config.py
+
 ## Usage
     Edit config.py to your liking
     chmod a+x redalert.py

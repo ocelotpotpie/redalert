@@ -16,13 +16,19 @@ from config import *
 magic = "\xFE"
 t = Twitter(auth=OAuth(OAUTH_TOKEN, OAUTH_SECRET, CONSUMER_KEY, CONSUMER_SECRET))
 
+print "########################################"
+print "# savi's server downtime tweeter thing #"
+print "########################################"
+print "\n"
 
 while 1:
+    # assume server is up
+    down = False
     # Determine whether the server is up or down
     try:      
         time = strftime("%H:%M:%S")
         # Connect to server
-    	s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         # actually connect to server
         s.connect((mcip, port))
         # Send the magic code
@@ -36,8 +42,7 @@ while 1:
         # caching
         down = False
     except Exception, e:
-        down = True
-        # assume server is down
+        # server must be down
         time = strftime("%H:%M:%S")
         # Log
         print str(time) + " > " + str(e)
@@ -45,10 +50,10 @@ while 1:
         if down:
             if DM_ME:
                 # Send DM
-                t.direct_messages.new(user=DM_USER,text="Oh no, the server is down!")
+                t.direct_messages.new(user=DM_USER,text="Hey, " + SERVER_NAME + " is down!")
             if TWEET_DOWNTIME:
                 # Send tweet
-                t.statuses.update(status="[AutoTweet] The server is down as of " + time + ". :(")
+                t.statuses.update(status=PREFIX + " The server is down as of " + time + ". :(")
         # caching
         down = True
     sleep(interval)

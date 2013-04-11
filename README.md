@@ -2,6 +2,7 @@
 Tweet if your minecraft server is down, optionally DM you.
 
 ## Quick setup
+	sudo pip install Twitter
 	cd /dir/for/this/
 	git init 
 	git remote add origin https://github.com/savi3000/redalert.git 

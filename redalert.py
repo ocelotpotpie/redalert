@@ -43,13 +43,13 @@ def ping(host=mcip, port=port):
     assert d[:3] == u'\xA7\x31\x00'
 
     if d[:3] = u'\xA7\x31\x00':
-    	up = true
+        up = true
 
 
 while 1:
-	# Determine whether the server is up or down
-	ping(host=mcip, port=port)
-	if up = true:
-		# Alert !
-		t.statuses.update(status="Server is down as of " + time)
-	time.sleep(60)
+    # Determine whether the server is up or down
+    ping(host=mcip, port=port)
+    if up = true:
+        # Alert !
+        t.statuses.update(status="Server is down as of " + time)
+    time.sleep(60)

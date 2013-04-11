@@ -46,6 +46,7 @@ while 1:
         time = strftime("%H:%M:%S")
         # Log
         print str(time) + " > " + str(e)
+        down = True
         # If the server is down
         if down:
             if DM_ME:
@@ -54,6 +55,4 @@ while 1:
             if TWEET_DOWNTIME:
                 # Send tweet
                 t.statuses.update(status=PREFIX + " The server is down as of " + time + ". :(")
-        # caching
-        down = True
     sleep(interval)

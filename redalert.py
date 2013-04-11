@@ -41,11 +41,12 @@ while 1:
         # Log
         print str(time) + " > " + str(e)
         # If the server is down
-        if down = True:
-            if DM_ME = True:
+        # Note: Will skip over once. just incase of some small error.
+        if down:
+            if DM_ME:
                 # Send DM
                 t.direct_messages.new(user=DM_USER,text="Oh no, the server is down!")
-            if TWEET_DOWNTIME = True:
+            if TWEET_DOWNTIME:
                 # Send tweet
                 t.statuses.update(status="[AutoTweet] The server is down as of " + time + ". :(")
         # caching

@@ -31,4 +31,4 @@ while 1:
     except Exception, e:
         # assume server is down
         print str(time) + " > " + str(e)
-    sleep(300) # 5 minutes
+    sleep(interval)

@@ -14,13 +14,13 @@ from config import *
 
 # Setup
 magic = "\xFE"
-time = strftime("%H:%M:%S")
 t = Twitter(auth=OAuth(OAUTH_TOKEN, OAUTH_SECRET, CONSUMER_KEY, CONSUMER_SECRET))
 
 
 while 1:
     # Determine whether the server is up or down
-    try:
+    try:      
+        time = strftime("%H:%M:%S")
     	s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         s.connect((mcip, port))
         s.send(magic)
@@ -31,4 +31,4 @@ while 1:
     except Exception, e:
         # assume server is down
         print str(time) + " > " + str(e)
-    sleep(60)
+    sleep(300) # 5 minutes

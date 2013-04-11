@@ -1,4 +1,3 @@
-#!/usr/bin/env python -B
 from twitter import *
 import socket
 import struct

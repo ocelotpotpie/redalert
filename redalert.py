@@ -29,8 +29,8 @@ while 1:
         s.connect((mcip, port))
         s.send(magic)
         data = s.recv(1024)
-        print data
     	s.close()
+        print data
     except Exception, e:
         print e
     sleep(60)

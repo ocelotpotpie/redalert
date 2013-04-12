@@ -16,6 +16,7 @@ from config import *
 magic = "\xFE"
 t = Twitter(auth=OAuth(OAUTH_TOKEN, OAUTH_SECRET, CONSUMER_KEY, CONSUMER_SECRET))
 
+print "\n"
 print "########################################"
 print "# savi's server downtime tweeter thing #"
 print "########################################"

@@ -60,7 +60,7 @@ while 1:
                 t.direct_messages.new(user=DM_USER,text="Hey, " + SERVER_NAME + " is down!")
             if TWEET_DOWNTIME:
                 # Send tweet
-                t.statuses.update(status=PREFIX + " " + SERVER_NAME + "is down as of " + time + " EST. :(")
+                t.statuses.update(status=PREFIX + " " + SERVER_NAME + " is down as of " + time + " EST. :(")
                 print "Server down... tweeting\n"
                 alreadyTweeted = True
     sleep(interval)

@@ -42,6 +42,7 @@ while 1:
         print str(time) + " > " + data
         # caching
         down = False
+        alreadyTweeted = None
         if alreadyTweeted:
                 t.statuses.update(status=PREFIX + " " + SERVER_NAME + " is back! :)")
                 print "Server is back... tweeting\n"

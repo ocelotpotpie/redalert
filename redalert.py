@@ -42,6 +42,7 @@ while 1:
         print str(time) + " > " + data
         # caching
         down = False
+        alreadyTweeted = False
     except Exception, e:
         # server must be down
         time = strftime("%H:%M")
@@ -49,11 +50,12 @@ while 1:
         print str(time) + " > " + str(e)
         down = True
         # If the server is down
-        if down:
+        if down and not alreadyTweeted:
             if DM_ME:
                 # Send DM
                 t.direct_messages.new(user=DM_USER,text="Hey, " + SERVER_NAME + " is down!")
             if TWEET_DOWNTIME:
                 # Send tweet
                 t.statuses.update(status=PREFIX + " The server is down as of " + time + " EST. :(")
+                alreadyTweeted = True
     sleep(interval)

@@ -14,6 +14,8 @@ Tweet if your minecraft server is down, optionally DM you.
     chmod a+x redalert.py
     python -B redalert.py
 
+If you're wondering, the -B keeps python from compiling config.py
+
 ## Making the twitter app
 
 * Sign into [the twitter app portal](https://dev.twitter.com/apps/new) and make a new app, call it whatever you want.

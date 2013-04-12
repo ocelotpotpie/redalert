@@ -24,6 +24,7 @@ print "\n"
 
 # assume server is up
 down = False
+alreadyTweeted = None
 while 1:
     # Determine whether the server is up or down
     try:      
@@ -42,7 +43,6 @@ while 1:
         print str(time) + " > " + data
         # caching
         down = False
-        alreadyTweeted = None
         if alreadyTweeted:
                 t.statuses.update(status=PREFIX + " " + SERVER_NAME + " is back! :)")
                 print "Server is back... tweeting\n"

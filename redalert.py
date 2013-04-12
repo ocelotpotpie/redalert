@@ -42,6 +42,9 @@ while 1:
         print str(time) + " > " + data
         # caching
         down = False
+        if alreadyTweeted:
+                t.statuses.update(status=PREFIX + " " + SERVER_NAME + " is back! :)")
+                print "Server is back... tweeting\n"
         alreadyTweeted = False
     except Exception, e:
         # server must be down
@@ -49,14 +52,14 @@ while 1:
         # Log
         print str(time) + " > " + str(e)
         down = True
-        # If the server is down
+        # Tell everyone
         if down and not alreadyTweeted:
             if DM_ME:
                 # Send DM
                 t.direct_messages.new(user=DM_USER,text="Hey, " + SERVER_NAME + " is down!")
             if TWEET_DOWNTIME:
                 # Send tweet
-                t.statuses.update(status=PREFIX + " The server is down as of " + time + " EST. :(")
+                t.statuses.update(status=PREFIX + " " + SERVER_NAME + "is down as of " + time + " EST. :(")
                 print "Server down... tweeting\n"
                 alreadyTweeted = True
     sleep(interval)

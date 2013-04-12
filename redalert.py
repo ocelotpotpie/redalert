@@ -26,7 +26,7 @@ while 1:
     down = False
     # Determine whether the server is up or down
     try:      
-        time = strftime("%H:%M:%S")
+        time = strftime("%H:%M")
         # Connect to server
         s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         # actually connect to server
@@ -43,7 +43,7 @@ while 1:
         down = False
     except Exception, e:
         # server must be down
-        time = strftime("%H:%M:%S")
+        time = strftime("%H:%M")
         # Log
         print str(time) + " > " + str(e)
         down = True
@@ -54,5 +54,5 @@ while 1:
                 t.direct_messages.new(user=DM_USER,text="Hey, " + SERVER_NAME + " is down!")
             if TWEET_DOWNTIME:
                 # Send tweet
-                t.statuses.update(status=PREFIX + " The server is down as of " + time + ". :(")
+                t.statuses.update(status=PREFIX + " The server is down as of " + time + " EST. :(")
     sleep(interval)

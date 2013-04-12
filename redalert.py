@@ -22,9 +22,9 @@ print "# savi's server downtime tweeter thing #"
 print "########################################"
 print "\n"
 
+# assume server is up
+down = False
 while 1:
-    # assume server is up
-    down = False
     # Determine whether the server is up or down
     try:      
         time = strftime("%H:%M")

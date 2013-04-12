@@ -57,5 +57,6 @@ while 1:
             if TWEET_DOWNTIME:
                 # Send tweet
                 t.statuses.update(status=PREFIX + " The server is down as of " + time + " EST. :(")
+                print "Server down... tweeting\n"
                 alreadyTweeted = True
     sleep(interval)

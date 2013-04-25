@@ -29,9 +29,9 @@ while 1:
     # Determine whether the server is up or down
     try:      
         time = strftime("%H:%M")
-        # Connect to server
         s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        # actually connect to server
+        # Connect to server
+        # It should error out here, if the server is down.
         s.connect((mcip, port))
         # Send the magic code
         s.send(magic)

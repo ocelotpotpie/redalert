@@ -7,7 +7,7 @@ OAUTH_SECRET = ""        # You get these from the link above
 CONSUMER_KEY = ""        # Reminder: DON'T SHARE THESE WITH ANYONE
 CONSUMER_SECRET = ""
 
-mcip = "yourserver.com" # The IP to your minecraft server
+mcip = "yourserver.com" # The IP to your minecraft server - for example savlovesocelotpotpie.com
 port = 25565 # The port it's on. Don't put this in quotes!
 interval = 120 # Interval at which to check in seconds, default is 2 minutes
 
